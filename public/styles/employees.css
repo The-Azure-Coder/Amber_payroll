@@ -1,4 +1,4 @@
-bodY{
+body{
     display: flex;
     flex-direction: column;
 }
@@ -111,7 +111,7 @@ tbody tr td{
     color: #fff;
     text-decoration: none;
     padding: 8px;
-    margin-left: 90%;
+    margin-left: 89%;
     width: fit-content;
     display: block;
     margin-bottom: 1.1rem;

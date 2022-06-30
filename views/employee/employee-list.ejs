@@ -12,7 +12,7 @@
         <h2>Employees Table</h2>
       </div>
 
-      <a href="" class="add-btn">Add Employee</a>
+      <a href="/employees/form" class="add-btn">Add Employee</a>
       <div class="board">
         <table width="100%">
           <thead>
@@ -42,8 +42,8 @@
               <td class="exphrs"><%=employee.expected_hrs%></td>
 
               <td class="edit">
-                <a href=""><i class="fas fa-edit"></i></a>
-                <a href=""><i class="fa fa-trash"></i></a>
+                <a href="/employees/edit/<%=employee.id%>"><i class="fas fa-edit"></i></a>
+                <a href="/employees/delete/<%=employee.id%>"><i class="fa fa-trash"></i></a>
             </td>
             </tr>
          <% }) %>
