@@ -75,15 +75,16 @@ DROP TABLE IF EXISTS `employees`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `employees` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `role_id` int NOT NULL,
   `department_id` int NOT NULL,
   `first_nm` varchar(45) NOT NULL,
   `last_nm` varchar(45) NOT NULL,
   `nis` varchar(45) NOT NULL,
   `trn` varchar(80) NOT NULL,
-  `expected_hrs` int NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `expected_hrs` int NOT NULL DEFAULT '40',
+  PRIMARY KEY (`id`),
+  KEY `FK_department_id_idx` (`department_id`),
+  CONSTRAINT `FK_department_id` FOREIGN KEY (`department_id`) REFERENCES `departments` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -92,6 +93,7 @@ CREATE TABLE `employees` (
 
 LOCK TABLES `employees` WRITE;
 /*!40000 ALTER TABLE `employees` DISABLE KEYS */;
+INSERT INTO `employees` VALUES (1,3,'Tyrese','Morgan','AA3123','123-456-789',50),(2,2,'Shannel','Grant','AS3456','145-678-890',40);
 /*!40000 ALTER TABLE `employees` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -109,8 +111,14 @@ CREATE TABLE `logins` (
   `emp_id` int NOT NULL,
   `email` varchar(45) NOT NULL,
   `password` varchar(45) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  PRIMARY KEY (`id`),
+  KEY `FK2_role_id_idx` (`role_id`),
+  KEY `FK2_department_id_idx` (`department_id`),
+  KEY `FK_emp_id_idx` (`emp_id`),
+  CONSTRAINT `FK2_department_id` FOREIGN KEY (`department_id`) REFERENCES `departments` (`id`),
+  CONSTRAINT `FK_emp_id` FOREIGN KEY (`emp_id`) REFERENCES `employees` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `FK_role_id` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -119,6 +127,7 @@ CREATE TABLE `logins` (
 
 LOCK TABLES `logins` WRITE;
 /*!40000 ALTER TABLE `logins` DISABLE KEYS */;
+INSERT INTO `logins` VALUES (1,1,3,1,'jrackfinn@gmail.com','tyrese123'),(2,2,2,2,'shannel12@gmail.com','shannel123');
 /*!40000 ALTER TABLE `logins` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -180,13 +189,22 @@ DROP TABLE IF EXISTS `salary_payment`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `salary_payment` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `emp_id` varchar(45) NOT NULL,
-  `department_id` varchar(45) NOT NULL,
-  `paycycle_id` varchar(45) NOT NULL,
-  `workhrs_id` varchar(45) NOT NULL,
+  `emp_id` int NOT NULL,
+  `department_id` int NOT NULL,
+  `paycycle_id` int NOT NULL,
+  `workhrs_id` int NOT NULL,
   `salary` varchar(45) NOT NULL,
   `overtime` varchar(45) NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `FK2_emp_id_idx` (`emp_id`),
+  KEY `FK3_emp_id_idx` (`emp_id`),
+  KEY `FK3_department_id_idx` (`department_id`),
+  KEY `FK_paycycle_id_idx` (`paycycle_id`),
+  KEY `FK_workhrs_id_idx` (`workhrs_id`),
+  CONSTRAINT `FK3_department_id` FOREIGN KEY (`department_id`) REFERENCES `departments` (`id`),
+  CONSTRAINT `FK3_emp_id` FOREIGN KEY (`emp_id`) REFERENCES `employees` (`id`),
+  CONSTRAINT `FK_paycycle_id` FOREIGN KEY (`paycycle_id`) REFERENCES `paycycle` (`id`),
+  CONSTRAINT `FK_workhrs_id` FOREIGN KEY (`workhrs_id`) REFERENCES `work_hours` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -233,4 +251,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-29 23:29:56
+-- Dump completed on 2022-06-30 17:34:29
