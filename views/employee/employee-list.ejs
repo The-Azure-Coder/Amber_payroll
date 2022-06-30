@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/employees.css">
+</head>
+<body>
+    <div class="table-head">
+        <h2>Employees Table</h2>
+      </div>
+
+      <a href="" class="add-btn">Add Employee</a>
+      <div class="board">
+        <table width="100%">
+          <thead>
+            <tr>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Department</th>
+              <th>NIS</th>
+              <th>TRN</th>
+              <th>Expected Hrs</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% employees.forEach((employee)=>{ %>
+            <tr>
+              <td class="fname"><%=employee.first_nm%></td>
+
+              <td class="lname"><%=employee.last_nm%></td>
+
+              <td class="department"><%=employee.department_nm%></td>
+
+              <td class="nis"><%=employee.nis%></td>
+
+              <td class="trn"><%=employee.trn%></td>
+
+              <td class="exphrs"><%=employee.expected_hrs%></td>
+
+              <td class="edit">
+                <a href=""><i class="fas fa-edit"></i></a>
+                <a href=""><i class="fa fa-trash"></i></a>
+            </td>
+            </tr>
+         <% }) %>
+          </tbody>
+        </table>
+      </div>
+    
+</body>
+</html>

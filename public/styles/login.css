@@ -1,0 +1,159 @@
+
+@import url('https://fonts.googleapis.com/css?family=Abel|Abril+Fatface|Alegreya|Arima+Madurai|Dancing+Script|Dosis|Merriweather|Oleo+Script|Overlock|PT+Serif|Pacifico|Playball|Playfair+Display|Share|Unica+One|Vibur');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-image: url('/images/undraw_secure_login_pdn4.svg');
+  background-size: cover;
+
+    font-family: 'Vibur', cursive;
+/*   the main font */
+    font-family: 'Abel', sans-serif;
+opacity: .95;
+/* background-image: linear-gradient(to top, #d9afd9 0%, #97d9e1 100%); */
+}
+
+
+
+form {
+    width: 450px;
+    min-height: 480px;
+    height: auto;
+    border-radius: 5px;
+    margin: 8% auto;
+    box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31);
+    padding: 2%;
+    background-image: linear-gradient(294deg, rgb(240, 92, 24) 0%, rgb(240, 92, 24) 18%,rgb(239, 116, 49) 18%, rgb(239, 116, 49) 33%,rgb(238, 140, 73) 33%, rgb(238, 140, 73) 38%,rgb(237, 165, 98) 38%, rgb(237, 165, 98) 53%,rgb(235, 189, 122) 53%, rgb(235, 189, 122) 56%,rgb(234, 213, 147) 56%, rgb(234, 213, 147) 83%,rgb(233, 237, 171) 83%, rgb(233, 237, 171) 100%),linear-gradient(249deg, rgb(240, 92, 24) 0%, rgb(240, 92, 24) 18%,rgb(239, 116, 49) 18%, rgb(239, 116, 49) 33%,rgb(238, 140, 73) 33%, rgb(238, 140, 73) 38%,rgb(237, 165, 98) 38%, rgb(237, 165, 98) 53%,rgb(235, 189, 122) 53%, rgb(235, 189, 122) 56%,rgb(234, 213, 147) 56%, rgb(234, 213, 147) 83%,rgb(233, 237, 171) 83%, rgb(233, 237, 171) 100%),linear-gradient(67.5deg, rgb(240, 92, 24) 0%, rgb(240, 92, 24) 18%,rgb(239, 116, 49) 18%, rgb(239, 116, 49) 33%,rgb(238, 140, 73) 33%, rgb(238, 140, 73) 38%,rgb(237, 165, 98) 38%, rgb(237, 165, 98) 53%,rgb(235, 189, 122) 53%, rgb(235, 189, 122) 56%,rgb(234, 213, 147) 56%, rgb(234, 213, 147) 83%,rgb(233, 237, 171) 83%, rgb(233, 237, 171) 100%),linear-gradient(22.5deg, rgb(240, 92, 24) 0%, rgb(240, 92, 24) 18%,rgb(239, 116, 49) 18%, rgb(239, 116, 49) 33%,rgb(238, 140, 73) 33%, rgb(238, 140, 73) 38%,rgb(237, 165, 98) 38%, rgb(237, 165, 98) 53%,rgb(235, 189, 122) 53%, rgb(235, 189, 122) 56%,rgb(234, 213, 147) 56%, rgb(234, 213, 147) 83%,rgb(233, 237, 171) 83%, rgb(233, 237, 171) 100%),linear-gradient(339deg, rgb(243, 116, 163),rgb(252, 182, 229)); background-blend-mode:overlay,overlay,overlay,overlay,normal;
+}
+/* form Container */
+form .con {
+    display: -webkit-flex;
+    display: flex;
+  
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+  
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+  
+      margin: 0 auto;
+}
+
+/* the header form form */
+header {
+    margin: 2% auto 10% auto;
+    text-align: center;
+}
+/* Login title form form */
+header h2 {
+    font-size: 250%;
+    font-family: 'Playfair Display', serif;
+    color: #3e403f;
+}
+/*  A welcome message or an explanation of the login form */
+header p {letter-spacing: 0.05em;}
+
+
+
+/* //////////////////////////////////////////// */
+/* //////////////////////////////////////////// */
+
+
+.input-item {
+    background: #fff;
+    color: #333;
+    padding: 14.5px 0px 15px 9px;
+    border-radius: 5px 0px 0px 5px;
+}
+
+
+/* inputs form  */
+input[class="form-input"]{
+    width: 280px;
+    height: 50px;
+  
+    margin-top: 4%;
+    padding: 15px;
+    
+    font-size: 16px;
+    font-family: 'Abel', sans-serif;
+    color: #5E6472;
+  
+    outline: none;
+    border: none;
+  
+    border-radius: 0px 5px 5px 0px;
+    transition: 0.2s linear;
+    
+}
+
+input:focus {
+    transform: translateX(-2px);
+    border-radius: 5px;
+}
+
+
+button {
+    display: inline-block;
+    color: #252537;
+  
+    width: 309px;
+    height: 50px;
+  
+    padding: 0 20px;
+    background: #fff;
+    border-radius: 5px;
+    
+    outline: none;
+    border: none;
+  
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s linear;
+    
+    margin: 7% auto;
+    letter-spacing: 0.05em;
+}
+/* Submits */
+.submits {
+    width: 48%;
+    display: inline-block;
+    float: left;
+    margin-left: 2%;
+}
+
+/*       Forgot Password button FAF3DD  */
+.frgt-pass {background: transparent;}
+
+/*     Sign Up button  */
+.sign-up {
+    text-decoration: none;
+    color: #333;
+}
+
+
+/* buttons hover */
+button:hover {
+    transform: translatey(3px);
+    box-shadow: none;
+}
+
+/* buttons hover Animation */
+button:hover {
+    animation: ani9 0.4s ease-in-out infinite alternate;
+}
+@keyframes ani9 {
+    0% {
+        transform: translateY(3px);
+    }
+    100% {
+        transform: translateY(5px);
+    }
+}

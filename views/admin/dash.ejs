@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/admin.css" />
+   
+  </head>
+
+  <body>
+    <section id="interface">
+      <div class="navigation">
+        <div class="nl">
+          <div class="search">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Search" />
+          </div>
+        </div>
+        <div class="profile">
+          <i class="fas fa-bell"></i>
+          <img
+            src="https://icon-library.com/images/no-profile-picture-icon/no-profile-picture-icon-18.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+      <h3 class="i-name">Dashboard</h3>
+
+      <div class="values">
+        <div class="val-box">
+          <i class="fa fa-users"></i>
+          <div>
+            <h3>0</h3>
+            <span>Employees</span>
+          </div>
+        </div>
+        <div class="val-box">
+          <i class="fa fa-users"></i>
+          <div>
+            <h3>0</h3>
+            <span>Total Users</span>
+          </div>
+        </div>
+        <div class="val-box">
+          <i class="fa fa-users"></i>
+          <div>
+            <h3>0</h3>
+            <span>Departments</span>
+          </div>
+        </div>
+        <div class="val-box">
+          <i class="fa fa-users"></i>
+          <div>
+            <h3>0</h3>
+            <span>Total Salary</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="table-head">
+        <h2>Employees Table</h2>
+      </div>
+
+      <div class="board">
+        <table width="100%">
+          <thead>
+            <tr>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Department</th>
+              <th>NIS</th>
+              <th>TRN</th>
+              <th>Expected Hrs</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% employees.forEach((employee)=>{ %>
+            <tr>
+              <td class="fname"><%=employee.first_nm%></td>
+
+              <td class="lname"><%=employee.last_nm%></td>
+
+              <td class="department"><%=employee.department_nm%></td>
+
+              <td class="nis"><%=employee.nis%></td>
+
+              <td class="trn"><%=employee.trn%></td>
+
+              <td class="exphrs"><%=employee.expected_hrs%></td>
+            </tr>
+         <% }) %>
+          </tbody>
+        </table>
+      </div>
+
+
+
+      <div class="heading-con">
+        <h2>Users Table</h2>
+        <h2 class="depart">Departments</h2>
+      </div>
+
+<div class="flex-table">
+      <div style="width: 53% ;" class="board">
+        <table width="100%">
+          <thead>
+            <tr>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Email</th>
+              <th>Password</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% users.forEach((user)=>{ %>
+            <tr>
+              <td class="fname"><%=user.first_nm%></td>
+
+              <td class="lname"><%=user.last_nm%></td>
+
+              <td class="department"><%=user.email%></td>
+
+              <td class="nis"><%=user.password%></td>
+            </tr>
+         <% }) %>
+          </tbody>
+        </table>
+        </div>
+        <div style="width: 40% ;" class="board">
+          <table width="100%">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Departments</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% departments.forEach((department)=>{ %>
+              <tr>
+                <td class="fname"><%=department.id%></td>
+                <td class="fname"><%=department.department_nm%></td>
+  
+              </tr>
+           <% }) %>
+            </tbody>
+          </table>
+          </div>
+      </div>
+    </section>
+  </body>
+</html>
