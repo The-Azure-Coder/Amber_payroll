@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="/styles/salary.css" />
+</head>
+
+<body>
+  <div class="navigation">
+    <div class="nl">
+      <div class="search">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Search" />
+      </div>
+    </div>
+    <div class="profile">
+      <i class="fas fa-bell"></i>
+      <img src="https://icon-library.com/images/no-profile-picture-icon/no-profile-picture-icon-18.jpg" alt="" />
+    </div>
+  </div>
+
+  <div class="table-head">
+    <h2>overtime Info</h2>
+  </div>
+
+  <!-- <a href="/employees/form" class="add-btn">Add Employee</a> -->
+  <div class="board">
+    <table width="100%">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Hours worked</th>
+          <th>Overtime salary</th>
+          <th>Final salary</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if(overtime.length > 0) { %>
+        <% overtime.forEach((pay)=>{ %>
+        <tr>
+          <td class="fname"><%=pay.first_nm%></td>
+
+          <td class="lname"><%=pay.last_nm%></td>
+
+          <td class="trn"><%=pay.hrs%></td>
+
+          <td class="trn"><%=pay.overtime%></td>
+          <td class="trn"><%=pay.final_salary%></td>
+        </tr>
+        <% }) %>
+        <% } else {%>
+        <tr>
+          <td colspan="4">NO Overtime</td>
+        </tr>
+        <% } %>
+      </tbody>
+    </table>
+  </div>
+</body>
+
+</html>

@@ -30,10 +30,14 @@ app.set("layout", "layouts/no-nav");
 var adminRouter = require("./routes/admin");
 var loginRouter = require("./routes/login");
 var employeeRouter = require("./routes/employee");
+var salaryRouter = require("./routes/salary");
+var overtimeRouter = require("./routes/overtime");
 
 app.use("/", loginRouter);
 app.use("/admin", adminRouter);
 app.use("/employees", employeeRouter);
+app.use("/salary", salaryRouter);
+app.use("/overtime", overtimeRouter);
 
 const port = process.env.PORT || 3700;
 app.listen(port, () => {
