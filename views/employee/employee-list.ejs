@@ -38,7 +38,6 @@
             <th>Department</th>
             <th>NIS</th>
             <th>TRN</th>
-            <th>Expected Hrs</th>
             <th>Action</th>
           </tr>
         </thead>
@@ -54,9 +53,6 @@
             <td class="nis"><%=employee.nis%></td>
 
             <td class="trn"><%=employee.trn%></td>
-
-            <td class="exphrs"><%=employee.expected_hrs%></td>
-
             <td class="edit">
               <a href="/employees/edit/<%=employee.id%>"><i class="fas fa-edit"></i></a>
               <a href="/employees/delete/<%=employee.id%>"><i class="fa fa-trash"></i></a>

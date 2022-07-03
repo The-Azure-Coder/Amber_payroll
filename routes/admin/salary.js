@@ -1,7 +1,6 @@
 const express = require("express");
-const { connect } = require("../lib/database");
 const router = express.Router();
-const conn = require("../lib/database");
+const conn = require("../../lib/database");
 
 router.get("/", (req, res) => {
   let salary = `SELECT 

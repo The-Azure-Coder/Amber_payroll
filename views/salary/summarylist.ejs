@@ -25,7 +25,7 @@
 
 
   <div class="table-head">
-    <h2>Salary Info</h2>
+    <h2>Department Salary</h2>
   </div>
 
   <!-- <a href="/salary/form" class="add-btn">Add Salary Info</a> -->
@@ -35,6 +35,7 @@
         <tr>
           <th>First Name</th>
           <th>Last Name</th>
+          <th>Department</th>
           <th>Start</th>
           <th>End</th>
           <th>Hours worked</th>
@@ -45,11 +46,14 @@
         </tr>
       </thead>
       <tbody>
+        <% if(salary.length > 0) { %>
         <% salary.forEach((pay)=>{ %>
         <tr>
           <td class="fname"><%=pay.first_nm%></td>
 
           <td class="lname"><%=pay.last_nm%></td>
+
+          <td class="department"><%=pay.department_nm%></td>
 
           <td class="department"><%=pay.start_time%></td>
 
@@ -68,6 +72,11 @@
           </td>
         </tr>
         <% }) %>
+        <% } else {%>
+        <tr>
+          <td colspan="9">NO Salary</td>
+        </tr>
+        <% } %>
       </tbody>
     </table>
   </div>

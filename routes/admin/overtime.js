@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const conn = require("../lib/database");
+const conn = require("../../lib/database");
 
 router.get("/", (req, res) => {
   let overtime = `SELECT 

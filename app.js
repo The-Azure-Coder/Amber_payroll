@@ -27,17 +27,24 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.set("layout", "layouts/no-nav");
 
-var adminRouter = require("./routes/admin");
+var adminRouter = require("./routes/admin/dashboard");
 var loginRouter = require("./routes/login");
-var employeeRouter = require("./routes/employee");
-var salaryRouter = require("./routes/salary");
-var overtimeRouter = require("./routes/overtime");
+var employeeRouter = require("./routes/admin/employee");
+var salaryRouter = require("./routes/admin/salary");
+var overtimeRouter = require("./routes/admin/overtime");
+var salaryInfoRouter = require("./routes/supervisor/salary-info");
+var summaryRouter = require("./routes/supervisor/summary");
+var paycycleRouter = require("./routes/supervisor/paycycle");
 
 app.use("/", loginRouter);
 app.use("/admin", adminRouter);
 app.use("/employees", employeeRouter);
 app.use("/salary", salaryRouter);
 app.use("/overtime", overtimeRouter);
+app.use("/overtime", overtimeRouter);
+app.use("/salaryInfo", salaryInfoRouter);
+app.use("/summary", summaryRouter);
+app.use("/paycycle", paycycleRouter);
 
 const port = process.env.PORT || 3700;
 app.listen(port, () => {

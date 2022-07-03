@@ -1,67 +1,60 @@
-body{
-    display: flex;
-    flex-direction: column;
+form{
+    background-color: #fff;
+    padding: 25px;
+    width: fit-content;
+    height: fit-content;
+    margin: 6% 32rem;
+    border-radius: .6rem;
 }
 
-
-.navigation{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #fff;
-    padding: 15px 30px;
-    border-bottom: 3px solid rgb(253, 179, 52)
-    
+form h2{
+    text-align: center;
+    margin-bottom: 2.5rem;
 }
 
-.navigation .search{
-    display: flex;
-    margin-right: 48rem;
-    margin-left: 15rem;
-    align-items: center;
-    padding: 10px 14px;
-    border-radius: 4px;
-    border: 1px solid #d7dbe6;
-    border-radius: 4px;
-
-}
-
-.navigation .search i{
-    margin-right: 14px;
-}
-
-.navigation .search input{
+form input{
+    padding: 15px;
+    width: 25rem;
+    margin-bottom: .8rem;
+    border-radius: .3rem;
     border: none;
     outline: none;
-    font-size: 14px;
+    border: 1px solid rgb(176, 176, 176);
+}
+form select{
+    padding: 15px;
+    width: 25rem;
+    margin-bottom: .8rem;
+    border-radius: .3rem;
+    border: none;
+    outline: none;
+    border: 1px solid rgb(176, 176, 176);
 }
 
- .navigation .profile{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+
+form span{
+    display: block;
+    color:#777;
 }
 
-.navigation .profile i{
-    margin-right: 20px;
-    font-size: 19px;
-    font-weight: 400;
+form .hrs-add{
+    margin-top: .9rem;
+    background-color: rgb(255, 145, 0);
+    width: 25rem;
+    border: none;
+    padding: 14px;
+    color: white;
+    border-radius: .4rem;
+    display: block;
 }
 
-.navigation .profile img{
-    width: 30px;
-    height:30px;
-    object-fit: cover;
-    border-radius: 50%;
-}
 .table-head h2{
     color: #444a53;
     padding: 40px 30px 0 30px;
     font-size: 30px;
     font-weight: 700;
     margin-left: 15rem;
-    margin-bottom: 1.1rem;
+
 
 }
 
@@ -89,7 +82,7 @@ body{
 
 .board{
     width: 80%;
-    margin: 0 0 30px 16rem;
+    margin: 0 0 30px 20rem;
     overflow: auto;
     background: #fff;
     border-radius: 8px;
@@ -168,4 +161,9 @@ tbody tr td{
     margin-bottom: 1.1rem;
     border-radius: .3rem;
 
+}
+
+.form-table{
+    display: flex;
+    flex-direction: column;
 }

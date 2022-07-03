@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/styles/add-paycycle.css">
+</head>
+
+<body>
+  <div class="form-table">
+    <form action="/paycycle/update" method="post">
+      <input type="hidden" value="<%=cycle.id%>" name="id">
+      <h2>Update Paycycle</h2>
+      <span>Enter Start time</span>
+      <input type="date" value="<%=cycle.start_time%>" name="start_time">
+
+      <span>Enter End time</span>
+      <input type="date" value="<%=cycle.end_time%>" name="end_time">
+
+      <button class="hrs-add" type="submit">Update</button>
+    </form>
+
+</body>
+
+
+
+
+</html>

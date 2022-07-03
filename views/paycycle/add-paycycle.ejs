@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/styles/add-paycycle.css">
+</head>
+
+<body>
+  <div class="form-table">
+    <form action="/paycycle/add" method="post">
+      <h2>Create Paycycle</h2>
+      <span>Enter Start time</span>
+      <input type="date" name="start_time">
+
+      <span>Enter End time</span>
+      <input type="date" name="end_time">
+
+      <button class="hrs-add" type="submit">Submit</button>
+    </form>
+
+    <div style="width: 60%" class="board">
+      <table width="100%">
+        <thead>
+          <tr>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% cycles.forEach((cycle)=>{ %>
+          <tr>
+            <td class="fname"><%=cycle.start_time%></td>
+
+            <td class="lname"><%=cycle.end_time%></td>
+            <td class="edit">
+              <a href="/paycycle/edit/<%=cycle.id%>"><i class="fas fa-edit"></i></a>
+              <a href="/paycycle/delete/<%=cycle.id%>"><i class="fa fa-trash"></i></a>
+            </td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</body>
+
+
+
+
+</html>

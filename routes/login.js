@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const conn = require('../lib/database')
+const conn = require("../lib/database");
 
 router.get("/", (req, res) => {
   res.render("login", {});
@@ -27,10 +27,10 @@ router.post("/auth", (req, res) => {
           if (rows[0].role_id == 1) {
             res.redirect("/admin");
           } else if (rows[0].role_id == 2) {
-            res.redirect("/supervise");
+            res.redirect("/salaryInfo");
           } else if (rows[0].role_id == 3) {
             res.redirect("/accountant");
-          }else if (rows[0].role_id == 4) {
+          } else if (rows[0].role_id == 4) {
             res.redirect("/employee");
           } else {
             res.redirect("/");
