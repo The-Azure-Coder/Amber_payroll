@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/styles/add-salary.css">
+</head>
+
+<body>
+  <form action="/salarytable/update" method="post">
+    <input type="hidden" value="<%=salary.work_id%>" name="work_id">
+    <input type="hidden" value="<%=salary.salary_id%>" name="salary_id">
+    <h2>Edit hours</h2>
+    <span>Employee ID</span>
+    <input type="text" value="<%=salary.emp_id%>" name="emp_id">
+    <span>Departments</span>
+    <select name="depart_id" id="">
+      <option value="<%=salary.depart_id%>"><%=salary.department_nm%></option>
+      <% departments.forEach((department)=>{ %>
+      <option value="<%=department.id%>"><%=department.department_nm%></option>
+      <% })%>
+    </select>
+
+    <span>Update Salary</span>
+    <input type="text" value="<%=salary.hrs%>" name="hrs">
+
+    <span>Paycycle</span>
+    <select name="paycycle_id" id="">
+      <option value="<%=salary.cycle_id%>"><%=salary.start_time%></option>
+      <% paycycle.forEach((cycle)=>{ %>
+      <option value="<%=cycle.id%>"><%=cycle.start_time%></option>
+      <% })%>
+    </select>
+
+    <span>Overtime hours</span>
+    <input type="text" value="<%=salary.emp_id%>" name="overtime_hrs">
+
+    <span>Overtime</span>
+    <input type="text" value="<%=salary.overtime%>" name="overtime">
+
+    <span>salary</span>
+    <input type="text" value="<%=salary.salary%>" name="salary">
+
+
+    <span>Final Salary</span>
+    <input type="text" value="<%=salary.final_salary%>" name="final_salary">
+
+    <button class="hrs-add" type="submit">Submit</button>
+  </form>
+
+</body>
+
+</html>

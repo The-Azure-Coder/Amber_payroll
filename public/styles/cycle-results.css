@@ -1,59 +1,74 @@
-form{
-    background-color: #fff;
-    padding: 25px;
-    width: fit-content;
-    height: fit-content;
-    margin: 6% 32rem;
-    border-radius: .6rem;
+.values{
+    display: flex;
+    justify-content: center;
+    margin-left: 12rem;
+    align-items: center;
+    padding: 30px 30px 0 90px;
+    flex-wrap: wrap;
 }
 
-form h2{
+.values .val-box{
+    background: #fff;
+    width: 240px;
+    padding: 16px 30px;
+    border-radius: 5px;
+    margin-right: 1.1rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.values .val-box i {
+    font-size: 25px;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
     text-align: center;
-    margin-bottom: 2.5rem;
+    color: #fff;
+    background: rgb(0, 115, 255);
+    margin-right: 15px;
 }
 
-form input{
-    padding: 15px;
-    width: 25rem;
-    margin-bottom: .8rem;
-    border-radius: .3rem;
-    border: none;
-    outline: none;
-    border: 1px solid rgb(176, 176, 176);
-}
-form select{
-    padding: 15px;
-    width: 25rem;
-    margin-bottom: .8rem;
-    border-radius: .3rem;
-    border: none;
-    outline: none;
-    border: 1px solid rgb(176, 176, 176);
+.values .val-box:nth-child(1) i {
+    background-color: rgb(255, 60, 0);
 }
 
-
-form span{
-    display: block;
-    color:#777;
+.values .val-box:nth-child(2) i {
+    background-color: rgb(255, 89, 0);
 }
 
-form .hrs-add{
-    margin-top: .9rem;
-    background-color: rgb(255, 145, 0);
-    width: 25rem;
-    border: none;
-    padding: 14px;
-    color: white;
-    border-radius: .4rem;
-    display: block;
+.values .val-box:nth-child(3) i {
+    background-color: rgb(255, 238, 0);
+}
+
+.values .val-box:nth-child(4) i {
+    background-color: rgb(134, 173, 5);
+}
+
+.values .val-box h3 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.values .val-box span {
+    font-size: 15px;
+    font-weight: 600;
+    color: #828997
+}
+
+.payInfo{
+    display: flex;
+    flex-direction: column;
 }
 
 .table-head h2{
     color: #444a53;
     padding: 40px 30px 0 30px;
-    font-size: 30px;
+    margin-left: 15.7rem;
+    font-size: 20px;
     font-weight: 700;
-    margin-left: 15rem;
+    margin-bottom: 1.2rem;
 
 
 }
@@ -70,7 +85,7 @@ form .hrs-add{
 
 
 .heading-con .depart{
-   margin-left: 36.5rem;
+   margin-left: 29.5rem;
    
 }
 
@@ -81,8 +96,8 @@ form .hrs-add{
 
 
 .board{
-    width: 80%;
-    margin: 0 0 30px 20rem;
+    width: 75%;
+    margin-left: 17.5rem;
     overflow: auto;
     background: #fff;
     border-radius: 8px;
@@ -146,24 +161,6 @@ tbody tr td{
 .edit a{
     text-decoration: none;
     font-size: 14px;
+    color: #594ef7;
     font-weight: 600;
-    margin-left: .5rem;
-}
-
-.add-btn{
-    background-color: rgb(255, 111, 0);
-    color: #fff;
-    text-decoration: none;
-    padding: 8px;
-    margin-left: 89%;
-    width: fit-content;
-    display: block;
-    margin-bottom: 1.1rem;
-    border-radius: .3rem;
-
-}
-
-.form-table{
-    display: flex;
-    flex-direction: column;
 }

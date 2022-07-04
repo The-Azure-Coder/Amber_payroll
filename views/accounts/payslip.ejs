@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="/styles/payslip.css">
+</head>
+
+<body>
+  <div class="slip">
+    <div class="background">
+      <table>
+        <tr style="text-align:centre;background:#e76400;color:white">
+          <th style="text-align:center">Payslip</th>
+        </tr>
+      </table>
+      <p></p>
+
+      <table>
+        <tr>
+          <td style="width:15%;border:none">Full Name</td>
+          <td style="width:15%;border:none"><%=payslip.first_nm%> <%=payslip.last_nm%></td>
+        </tr>
+        <tr>
+          <td style="width:15%;border:none">Employee ID</td>
+          <td style="width:15%;border:none"><%=payslip.emp_id%> </td>
+        </tr>
+        <tr>
+          <td style="width:15%;border:none">Department</td>
+          <td style="width:15%;border:none"><%=payslip.department_nm%></td>
+        </tr>
+      </table>
+      <p></p>
+
+      <table>
+        <tr style="text-align:centre;background:#e76400;color:white">
+          <th style="text-align:center">Paycycle Period: <%=payslip.start_time%> - <%=payslip.end_time%></th>
+        </tr>
+      </table>
+      <p></p>
+
+      <table>
+        <tr>
+          <th colspan=3> Earnings</th>
+          <th colspan=3> Deductions</th>
+        </tr>
+        <tr>
+          <th colspan=2> Description</th>
+          <th>Amount</th>
+          <th colspan=2> Description</th>
+          <th> Amount</th>
+        </tr>
+        <tr>
+          <td colspan=2>Basic Salary</td>
+          <td style="text-align:right">$<%=payslip.salary%></td>
+          <td colspan=2>Tax</td>
+          <td style="text-align:right">$0.00</td>
+        </tr>
+        <tr>
+          <th style="text-align:right" colspan=3> Total Earnings: $<%=payslip.salary%></th>
+          <th style="text-align:right" colspan=3> Total Deductions: $0.00</th>
+        </tr>
+        <tr>
+          <td colspan=2> OT Hours: </td>
+          <td style="text-align:right"> <%=payslip.overtime_hrs%></td>
+          <td colspan=2>OT Amount</td>
+          <td style="text-align:right">$<%=payslip.overtime%></td>
+        </tr>
+        <tr>
+          <th style="text-align:right" colspan=6> Net Salary: $<%=payslip.final_salary%></th>
+        </tr>
+
+      </table>
+      <p></p>
+      <table>
+        <tr>
+          <th colspan=6 style="border:none">Payment Information:</th>
+        </tr>
+        <tr>
+          <td style="width:15%;border:none">Salary Currency</td>
+          <td style="width:15%;border:none"> USD</td>
+        </tr>
+        <tr>
+          <td style="width:15%;border:none">Payment Method</td>
+          <td style="width:15%;border:none"> Bank Transfer</td>
+        </tr>
+        <tr>
+          <td style="width:15%;border:none">Bank Name</td>
+          <td style="width:15%;border:none"> Morgana Bank</td>
+        </tr>
+
+      </table>
+    </div>
+  </div>
+
+</body>
+
+</html>

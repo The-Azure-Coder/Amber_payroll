@@ -35,6 +35,10 @@ var overtimeRouter = require("./routes/admin/overtime");
 var salaryInfoRouter = require("./routes/supervisor/salary-info");
 var summaryRouter = require("./routes/supervisor/summary");
 var paycycleRouter = require("./routes/supervisor/paycycle");
+var salaryDataRouter = require("./routes/accounts/salary-data");
+var cycleResultsRouter = require("./routes/accounts/cycle-search");
+var payslipRouter = require("./routes/accounts/payslip");
+var empsalaryRouter = require("./routes/employee/cycle-form");
 
 app.use("/", loginRouter);
 app.use("/admin", adminRouter);
@@ -45,6 +49,10 @@ app.use("/overtime", overtimeRouter);
 app.use("/salaryInfo", salaryInfoRouter);
 app.use("/summary", summaryRouter);
 app.use("/paycycle", paycycleRouter);
+app.use("/salarytable", salaryDataRouter);
+app.use("/cycleresults", cycleResultsRouter);
+app.use("/slip", payslipRouter);
+app.use("/empsalary", empsalaryRouter);
 
 const port = process.env.PORT || 3700;
 app.listen(port, () => {

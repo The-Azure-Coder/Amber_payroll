@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/styles/summary.css">
+</head>
+
+<body>
+  <form action="/cycleResults/list" method="post">
+    <h2>Pay cycle search</h2>
+    <span>Select An Employee</span>
+    <select name="emp_id" id="">
+      <% employees.forEach((employee)=>{ %>
+      <option value="<%=employee.id%>"><%=employee.first_nm%> <%=employee.last_nm %></option>
+      <% }) %>
+    </select>
+    <span>Select a Paycycle</span>
+    <select name="cycle_id" id="">
+      <% paycycle.forEach((cycle)=>{ %>
+      <option value="<%=cycle.id%>"><%=cycle.start_time%>-<%=cycle.end_time%></option>
+      <% }) %>
+    </select>
+    <button class="generate" type="submit">Search</button>
+  </form>
+</body>
+
+</html>

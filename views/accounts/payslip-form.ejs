@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/styles/summary.css">
+</head>
+
+<body>
+  <form action="/slip/pay" method="post">
+    <h2>Payslip Generator</h2>
+    <span>Select An Employee</span>
+    <select name="id" id="">
+      <% employees.forEach((employee)=>{ %>
+      <option value="<%=employee.id%>"><%=employee.first_nm%> <%=employee.last_nm %></option>
+      <% }) %>
+    </select>
+    <button class="generate" type="submit">Generate Payslip</button>
+  </form>
+</body>
+
+</html>

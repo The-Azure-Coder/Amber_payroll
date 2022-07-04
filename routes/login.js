@@ -21,6 +21,7 @@ router.post("/auth", (req, res) => {
           req.session.loggedin = true;
           req.session.department_id = rows[0].deaprtment_id;
           req.session.role_id = rows[0].role_id;
+          req.session.emp_id = rows[0].emp_id;
           console.log(rows[0].role_id);
           console.log(rows[0].department_id);
 
@@ -28,10 +29,10 @@ router.post("/auth", (req, res) => {
             res.redirect("/admin");
           } else if (rows[0].role_id == 2) {
             res.redirect("/salaryInfo");
-          } else if (rows[0].role_id == 3) {
-            res.redirect("/accountant");
+          } else if (rows[0].role_id == 3 || rows[0].department_id == 4) {
+            res.redirect("/salarytable");
           } else if (rows[0].role_id == 4) {
-            res.redirect("/employee");
+            res.redirect("/empsalary");
           } else {
             res.redirect("/");
           }

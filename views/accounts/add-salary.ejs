@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/styles/add-salary.css">
+</head>
+
+<body>
+  <form action="/salarytable/add" method="post">
+    <h2>Add Hours</h2>
+    <span>Employee ID</span>
+    <input type="text" name="emp_id">
+
+    <span>Departments</span>
+    <select name="depart_id" id="">
+      <% departments.forEach((department)=>{ %>
+      <option value="<%=department.id%>"><%=department.department_nm%></option>
+      <% })%>
+    </select>
+
+    <span>Hours Worked</span>
+    <input type="text" name="hrs">
+
+    <span>Paycycle</span>
+    <select name="paycycle_id" id="">
+      <% paycycle.forEach((cycle)=>{ %>
+      <option value="<%=cycle.id%>"><%=cycle.start_time%></option>
+      <% })%>
+    </select>
+
+    <span>Overtime hours</span>
+    <input type="text" name="overtime_hrs">
+
+    <button class="hrs-add" type="submit">Submit</button>
+  </form>
+
+</body>
+
+</html>

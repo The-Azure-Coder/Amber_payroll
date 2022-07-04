@@ -1,0 +1,39 @@
+
+
+  .slip{
+    margin-left: 20rem;
+    margin-top: 2%;
+  
+  }
+
+
+  .column {
+    float: left;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  table {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #dddddd;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin-left: 6rem;
+    border-radius: .4rem;
+  }
+
+  td,
+  th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    width: 10rem;
+  }
