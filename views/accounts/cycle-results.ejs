@@ -54,10 +54,10 @@
           <tr>
             <th>First Name</th>
             <th>Last Name</th>
-            <th>Start</th>
-            <th>End</th>
+            <th>Department</th>
             <th>Hours worked</th>
             <th>Salary</th>
+            <th>OT hours</th>
             <th>Overtime</th>
             <th>Final Salary</th>
           </tr>
@@ -69,13 +69,13 @@
 
             <td class="lname"><%=pay.last_nm%></td>
 
-            <td class="department"><%=pay.start_time%></td>
-
-            <td class="nis"><%=pay.end_time%></td>
+            <td class="department"><%=pay.department_nm%></td>
 
             <td class="trn"><%=pay.hrs%></td>
 
             <td class="trn"><%=pay.salary%></td>
+
+            <td class="exphrs"><%=pay.overtime_hrs%></td>
 
             <td class="exphrs"><%=pay.overtime%></td>
 

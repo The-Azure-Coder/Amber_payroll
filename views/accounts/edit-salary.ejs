@@ -14,8 +14,24 @@
     <input type="hidden" value="<%=salary.work_id%>" name="work_id">
     <input type="hidden" value="<%=salary.salary_id%>" name="salary_id">
     <h2>Edit hours</h2>
-    <span>Employee ID</span>
-    <input type="text" value="<%=salary.emp_id%>" name="emp_id">
+
+
+
+    <div class="contact">
+      <div class="name">
+        <span>Employee ID</span>
+        <input type="text" value="<%=salary.emp_id%>" name="emp_id">
+        <span>salary</span>
+        <input type="text" value="<%=salary.salary%>" name="salary">
+      </div>
+      <div class="login">
+        <span>Work hours</span>
+        <input type="text" value="<%=salary.hrs%>" name="hrs">
+        <span>Overtime hours</span>
+        <input type="text" value="<%=salary.emp_id%>" name="overtime_hrs">
+      </div>
+    </div>
+
     <span>Departments</span>
     <select name="depart_id" id="">
       <option value="<%=salary.depart_id%>"><%=salary.department_nm%></option>
@@ -23,9 +39,6 @@
       <option value="<%=department.id%>"><%=department.department_nm%></option>
       <% })%>
     </select>
-
-    <span>Update Salary</span>
-    <input type="text" value="<%=salary.hrs%>" name="hrs">
 
     <span>Paycycle</span>
     <select name="paycycle_id" id="">
@@ -35,20 +48,16 @@
       <% })%>
     </select>
 
-    <span>Overtime hours</span>
-    <input type="text" value="<%=salary.emp_id%>" name="overtime_hrs">
 
     <span>Overtime</span>
     <input type="text" value="<%=salary.overtime%>" name="overtime">
 
-    <span>salary</span>
-    <input type="text" value="<%=salary.salary%>" name="salary">
 
 
     <span>Final Salary</span>
     <input type="text" value="<%=salary.final_salary%>" name="final_salary">
 
-    <button class="hrs-add" type="submit">Submit</button>
+    <button class="emp-add" type="submit">Update</button>
   </form>
 
 </body>

@@ -14,6 +14,7 @@ router.get("/", (req, res) => {
   pt.end_time,
   pt.activity,
   wt.hrs,
+  wt.overtime_hrs,
   st.id AS salary_id,
   st.salary,
   st.overtime,
@@ -40,19 +41,23 @@ JOIN
 router.get("/form", (req, res) => {
   let paycycle = `SELECT * FROM paycycle`;
   let departments = `SELECT * FROM departments`;
+  let employees = `SELECT * FROM employees`;
   conn.query(paycycle, (err, payRows) => {
     if (err) throw err;
     conn.query(departments, (err, dRows) => {
       if (err) throw err;
-      res.render("accounts/add-salary", {
-        layout: "layouts/accounts-layout",
-        paycycle: payRows,
-        departments: dRows,
+      conn.query(employees, (err, eRows) => {
+        if (err) throw err;
+        res.render("accounts/add-salary", {
+          layout: "layouts/accounts-layout",
+          paycycle: payRows,
+          departments: dRows,
+          employees: eRows,
+        });
       });
     });
   });
 });
-
 router.post("/add", (req, res) => {
   var overtime = 1.5;
   let hrsData = {
@@ -125,6 +130,7 @@ router.get("/edit/:salary_id", (req, res) => {
   pt.activity,
   wt.id AS work_id,
   wt.hrs,
+  wt.overtime_hrs,
   st.id AS salary_id,
   st.salary,
   st.overtime,

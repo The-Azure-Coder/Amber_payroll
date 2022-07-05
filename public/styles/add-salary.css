@@ -3,8 +3,7 @@ form{
     padding: 25px;
     width: fit-content;
     height: fit-content;
-    margin: 1% 32rem;
-    border-radius: .6rem;
+    margin: 2% 32rem;
 }
 
 form h2{
@@ -12,9 +11,26 @@ form h2{
     margin-bottom: 2.5rem;
 }
 
+form .contact{
+    display: flex;
+}
+
+form .contact input{
+    width: 14rem;
+    padding: 10px;
+    margin-bottom: .6rem;
+    border-radius: .3rem;
+    border: none;
+    outline: none;
+    border: 1px solid rgb(176, 176, 176);
+}
+
+form .name{
+    margin-right: 2rem;
+}
 form input{
     padding: 15px;
-    width: 25rem;
+    width: 30rem;
     margin-bottom: .8rem;
     border-radius: .3rem;
     border: none;
@@ -23,7 +39,7 @@ form input{
 }
 form select{
     padding: 15px;
-    width: 25rem;
+    width: 30rem;
     margin-bottom: .8rem;
     border-radius: .3rem;
     border: none;
@@ -37,10 +53,10 @@ form span{
     color:#777;
 }
 
-form .hrs-add{
+form .emp-add{
     margin-top: .9rem;
     background-color: rgb(255, 145, 0);
-    width: 25rem;
+    width: 30rem;
     border: none;
     padding: 14px;
     color: white;

@@ -5,14 +5,19 @@ const conn = require("../../lib/database");
 router.get("/", (req, res) => {
   let paycycle = `SELECT * FROM paycycle`;
   let departments = `SELECT * FROM departments`;
+  let employees = `SELECT * FROM employees`;
   conn.query(paycycle, (err, payRows) => {
     if (err) throw err;
     conn.query(departments, (err, dRows) => {
       if (err) throw err;
-      res.render("salary/add-salary", {
-        layout: "layouts/supervisor-layout",
-        paycycle: payRows,
-        departments: dRows,
+      conn.query(employees, (err, empRows) => {
+        if (err) throw err;
+        res.render("salary/add-salary", {
+          layout: "layouts/supervisor-layout",
+          paycycle: payRows,
+          departments: dRows,
+          employees: empRows,
+        });
       });
     });
   });
@@ -64,7 +69,7 @@ router.post("/add", (req, res) => {
             let salaryQuery = `INSERT INTO salary_payment SET ?`;
             conn.query(salaryQuery, salaryData, (err, salaryRows) => {
               if (err) throw err;
-              res.redirect("/salaryInfo");
+              res.redirect("/preview");
             });
           }
         );

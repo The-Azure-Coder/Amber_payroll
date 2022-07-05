@@ -1,0 +1,55 @@
+
+
+.profile-con{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-left: 18rem;
+    margin-top: 6rem;
+}
+
+.profile-card{
+    background-color: #fff;
+    display: flex;
+    margin-bottom: 3rem;
+
+}
+
+.profile-card .image {
+    margin-right: 2rem;
+}
+
+.profile-card .content{
+    padding: 10px;
+    width: 350px;
+}
+
+
+.profile-card .content p {
+    margin-bottom: .8rem;
+}
+.profile-card .content p span{
+    margin-left: 2.5rem;
+}
+
+.profile-card .image img{
+    width: 350px;
+    height: 350px;
+    display: block;
+}
+
+.preview-head h2{
+    position: relative;
+    left: 28.5rem;
+   
+}
+
+.hrs-edit{
+    text-decoration: none;
+    display: block;
+    background-color: rgb(249, 116, 0);
+    width: fit-content;
+    padding: 10px;
+    color: white;
+
+}

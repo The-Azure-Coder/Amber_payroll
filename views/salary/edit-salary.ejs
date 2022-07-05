@@ -10,32 +10,19 @@
 </head>
 
 <body>
-  <form action="/salaryInfo/add" method="post">
-    <h2>Add Hours</h2>
-    <span>Employee ID</span>
-    <input type="text" name="emp_id">
+  <form action="/preview/update" method="post">
+    <input type="hidden" value="<%=salary.work_id%>" name="work_id">
+    <h2>Edit Overtime Hours</h2>
 
-    <span>Departments</span>
-    <select name="depart_id" id="">
-      <% departments.forEach((department)=>{ %>
-      <option value="<%=department.id%>"><%=department.department_nm%></option>
-      <% })%>
-    </select>
+    <span>Employee</span>
+    <input type="text" value="<%=salary.first_nm%> <%=salary.last_nm%>" name="emp_id">
 
-    <span>Hours Worked</span>
-    <input type="text" name="hrs">
-
-    <span>Paycycle</span>
-    <select name="paycycle_id" id="">
-      <% paycycle.forEach((cycle)=>{ %>
-      <option value="<%=cycle.id%>"><%=cycle.start_time%></option>
-      <% })%>
-    </select>
-
+    <span>Work hours</span>
+    <input type="text" value="<%=salary.hrs%>" name="hrs">
     <span>Overtime hours</span>
-    <input type="text" name="overtime_hrs">
+    <input type="text" value="<%=salary.overtime_hrs%>" name="overtime_hrs">
 
-    <button class="hrs-add" type="submit">Submit</button>
+    <button class="emp-add" type="submit">Update</button>
   </form>
 
 </body>

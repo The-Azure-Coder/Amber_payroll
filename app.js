@@ -39,6 +39,8 @@ var salaryDataRouter = require("./routes/accounts/salary-data");
 var cycleResultsRouter = require("./routes/accounts/cycle-search");
 var payslipRouter = require("./routes/accounts/payslip");
 var empsalaryRouter = require("./routes/employee/cycle-form");
+var previewRouter = require("./routes/supervisor/preview");
+var absentRouter = require("./routes/supervisor/absent");
 
 app.use("/", loginRouter);
 app.use("/admin", adminRouter);
@@ -53,6 +55,8 @@ app.use("/salarytable", salaryDataRouter);
 app.use("/cycleresults", cycleResultsRouter);
 app.use("/slip", payslipRouter);
 app.use("/empsalary", empsalaryRouter);
+app.use("/preview", previewRouter);
+app.use("/absent", absentRouter);
 
 const port = process.env.PORT || 3700;
 app.listen(port, () => {

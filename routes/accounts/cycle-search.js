@@ -50,6 +50,7 @@ JOIN
   pt.activity,
   wt.id AS work_id,
   wt.hrs,
+  wt.overtime_hrs,
   st.id AS salary_id,
   st.salary,
   st.overtime,

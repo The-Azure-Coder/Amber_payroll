@@ -8,6 +8,7 @@ router.get("/", (req, res) => {
     et.first_nm,
     et.last_nm,
     wt.hrs,
+    wt.overtime_hrs,
     st.overtime,
     st.final_salary
 FROM

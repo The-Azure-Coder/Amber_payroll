@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/styles/add-paycycle.css">
+</head>
+
+<body>
+  <div class="form-table">
+    <form action="/absent/add" method="post">
+      <h2>Absent Form</h2>
+      <span>Select An Employee</span>
+      <select name="emp_id" id="">
+        <% employees.forEach((employee)=>{%>
+        <option value="<%=employee.id%>"><%=employee.first_nm%> <%=employee.last_nm%></option>
+        <%})%>
+      </select>
+
+      <span>Enter Absent day</span>
+      <input type="date" name="absent_date">
+
+      <button class="hrs-add" type="submit">Submit</button>
+    </form>
+    <div style="width: 60%" class="board">
+      <table width="100%">
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Department</th>
+            <th>Absent Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% absents.forEach((absent)=>{ %>
+          <tr>
+            <td class="fname"><%=absent.first_nm%></td>
+            <td class="lname"><%=absent.last_nm%></td>
+            <td class="lname"><%=absent.department_nm%></td>
+            <td class="lname"><%=absent.absent_date%></td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</body>
+
+
+
+
+</html>

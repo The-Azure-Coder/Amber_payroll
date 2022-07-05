@@ -10,18 +10,38 @@
 </head>
 
 <body>
-  <div class="profile">
-    <div class="image">
-      <img src="" alt="">
+  <div class="preview-head">
+    <h2>Salary Preview</h2>
+  </div>
+  <div class="profile-con">
+    <% salary.forEach((pay)=>{ %>
+    <div class="profile-card">
+      <div class="image">
+        <img src="https://institute.kmd.com.sg/noprofile.jpg" alt="">
+      </div>
+      <div class="content">
+        <p>Full name:<span><%=pay.first_nm%> <%=pay.last_nm%></span></p>
+        <p>Department:<span><%=pay.department_nm%></span>
+        </p>
+        <p>Basic wage:<span><%=pay.salary%></span>
+        </p>
+        <p>Start time:<span><%=pay.start_time%></span>
+        </p>
+        <p>End time:<span><%=pay.end_time%></span>
+        </p>
+        <p>Work hours:<span><%=pay.hrs%></span>
+        </p>
+        <p>overtime hours:<span><%=pay.overtime_hrs%></span>
+        </p>
+        <p>overtime:<span><%=pay.overtime%></span>
+        </p>
+        <p>Final salary:<span><%=pay.final_salary%></span>
+        </p>
+        <a class="hrs-edit" href="/preview/edit/<%=pay.salary_id%>">Edit Hours</a>
+      </div>
     </div>
-    <div class="content">
-      <h2>first_nm last_nm</h2>
-      <h2>Department</h2>
 
-    </div>
-
-
-
+    <%})%>
   </div>
 
 </body>

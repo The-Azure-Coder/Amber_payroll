@@ -14,6 +14,7 @@ router.get("/", (req, res) => {
   pt.end_time,
   pt.activity,
   wt.hrs,
+  wt.overtime_hrs,
   st.salary,
   st.overtime,
   st.final_salary
